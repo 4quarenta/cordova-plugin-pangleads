@@ -11,7 +11,8 @@
   "repository": "4quarenta/cordova-plugin-pangleads",
   "keywords": [
     "ecosystem:cordova",
-    "cordova-android"
+    "cordova-android",
+    "plugin",
   ],
   "author": "4quarenta",
   "license": "ISC",
