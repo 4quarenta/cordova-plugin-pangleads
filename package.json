@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-pangleads",
+  "version": "1.0.0",
+  "description": "Pangleads sdk for cordova android",
+  "cordova": {
+    "id": "cordova.plugin.pangleads",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": "4quarenta/cordova-plugin-pangleads",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "4quarenta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4quarenta/cordova-plugin-pangleads/issues"
+  },
+  "homepage": "https://github.com/4quarenta/cordova-plugin-pangleads#readme"
+}

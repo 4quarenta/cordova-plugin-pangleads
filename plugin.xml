@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova.plugin.pangleads" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>pangleads</name><js-module name="pangleads" src="www/pangleads.js"><clobbers target="cordova.plugins.pangleads" /></js-module>
+    
+    <!-- <hook type="after_prepare" src="afterPrepareScript.js" /> -->
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="pangleads"><param name="android-package" value="cordova.plugin.pangleads.pangleads" /></feature>
+        </config-file>        
+
+        <config-file target="AndroidManifest.xml" parent="/*">		
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <!-- <uses-permission android:name="com.google.android.gms.permission.AD_ID" />  -->    
+          </config-file>   
+        
+        <source-file src="src/android/pangleads.java" target-dir="src/cordova/plugin/pangleads/pangleads" />
+
+        <framework custom="true" src="src/android/pangleads-sdk.gradle" type="gradleReference" />
+        <framework src="com.pangle.global:ads-sdk:4.6.0.4"/>
+        <framework src="com.google.android.gms:play-services-ads-identifier:17.0.0"/>
+    </platform>
+</plugin>
