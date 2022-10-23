@@ -38,7 +38,7 @@ Now the plugin is ready to show ads
 ### 3. App Open Ads
 
 ```javascript
-cordova.plugins.pangleads.ShowAppOpen("SLOT_ID");
+cordova.plugins.pangleads.showAppOpen("SLOT_ID");
 ```
 
 OR 
@@ -53,7 +53,7 @@ function error(result){
     console.log(result);
 };
   
-cordova.plugins.pangleads.ShowAppOpen("SLOT_ID", 3000, success, error);
+cordova.plugins.pangleads.showAppOpen("SLOT_ID", 3000, success, error);
 ```
 
 Note that 3000 is the timeout recommended by pangle, but with the plugin you are free to change it. Running the first way, 3000 is set by default.
