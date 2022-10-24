@@ -15,7 +15,7 @@ I will try to keep the latest version, current version is 'com.pangle.global:ads
 
 ## Usage
 
-### 1. Create Ad Unit ID for your banner and interstitial.
+### 1. Create Ad Unit ID for your banner, app open and interstitial.
 
 Go to the [Pangle](https://www.pangleglobal.com/) and add your app (if you haven't done so already), once your app is added to your Pangle account, create a new ad unit for it.
 
@@ -58,5 +58,54 @@ cordova.plugins.pangleads.showAppOpen("SLOT_ID", 3000, success, error);
 
 Note that 3000 is the timeout recommended by pangle, but with the plugin you are free to change it. Running the first way, 3000 is set by default.
 
-### 2. Interstitial Ads
+### 4. Interstitial Ads
+```javascript
+
+function success(result){
+    console.log(result);
+},
+  
+function error(result){
+    console.log(result);
+};
+
+cordova.plugins.pangleads.showInterstitial("SLOT_ID", success, error);
+
+```
+
+### 5. Banner Ads
+
+#### 5.1 to show
+
+```javascript
+
+function success(result){
+    console.log(result);
+},
+  
+function error(result){
+    console.log(result);
+};
+
+cordova.plugins.pangleads.showBanner("SLOT_ID", success, error);
+
+```
+
+#### 5.1 to destroy
+
+```javascript
+
+function success(result){
+    console.log(result);
+},
+  
+function error(result){
+    console.log(result);
+};
+
+cordova.plugins.pangleads.destroyBanner("SLOT_ID", success, error);
+
+```
+
+Note that to hide the banner it will be necessary to destroy it, to show it again it will be necessary to recreate it. soon i will add a function to just hide it
 
