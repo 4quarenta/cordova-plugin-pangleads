@@ -1,6 +1,6 @@
 # cordova-plugin-pangleads
 
-If you are earning more than USD$200 monthly from using this plugin, please consider [`buy me a coffee`](https://www.buymeacoffee.com/4quarenta)
+If you are earning more than USD$200 monthly from using this plugin, please consider [`buy me a coffee`](https://www.buymeacoffee.com/4quarenta) or [`paypal`](https://www.paypal.com/donate/?business=P2K2AXEMGJHDE&no_recurring=0&currency_code=BRL)
 
 ## Installation
 
