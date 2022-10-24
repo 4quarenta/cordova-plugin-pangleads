@@ -1,5 +1,7 @@
 # cordova-plugin-pangleads
 
+If you are earning more than USD$200 monthly from using this plugin, please consider [`buy me a coffee`](https://www.buymeacoffee.com/4quarenta)
+
 ## Installation
 
 ```sh
@@ -7,8 +9,27 @@ cordova plugin add cordova-plugin-pangleads
 ```
 
 ```sh
-https://github.com/4quarenta/cordova-plugin-pangleads
+cordova plugin add https://github.com/4quarenta/cordova-plugin-pangleads.git
 ```
+
+`IMPORTANT!` there is currently a bug that I couldn't think of a way to solve (import the icons in a way that uses the default package), this happens because for the `app open` it is necessary to import the icon. If you have a solution for this let me know! 
+
+To avoid it, right after adding the plugin:
+
+in `platforms\android\app\src\main\java\cordova\plugin\pangleads\pangleads\pangleads.java`
+
+On line 33, replace
+
+```java
+import com.example.app.R;
+```
+for your package
+
+```java
+import com.yourpackage.app.R;
+```
+now just be happy!
+
 
 ## Pangle SDK version
 I will try to keep the latest version, current version is 'com.pangle.global:ads-sdk:4.6.0.4'
