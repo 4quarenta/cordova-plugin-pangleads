@@ -65,9 +65,9 @@ public class pangleads extends CordovaPlugin {
 
     private Activity getCurrentActivity() { return cordova.getActivity(); }
 
-    private static PAGConfig buildNewConfig(Context context) {
+    private static PAGConfig buildNewConfig(final String AppId, Context context) {
         return new PAGConfig.Builder()
-                .appId(APP_ID)
+                .appId(AppId)
                 .appIcon(R.mipmap.ic_launcher)
                 .debugLog(true)
                 .supportMultiProcess(false)//If your app is a multi-process app, set this value to true
@@ -87,6 +87,11 @@ public class pangleads extends CordovaPlugin {
             String pluginVersion = args.getString( 0 );
             String appid = args.getString( 1 );
 
+            if(appid.isEmpty()) {
+                 callbackContext.error("pangle init fail: appid not defined");
+                 return true;
+            }
+
             Log.i(TAG, "Initializing Pangleads Cordova v" + pluginVersion + "..." );
 
              // Check if Activity is available
@@ -98,7 +103,7 @@ public class pangleads extends CordovaPlugin {
 
             if(PAGSdk.isInitSuccess()) callbackContext.success("PangleSDK já está iniciado!");
 
-            PAGConfig pAGInitConfig = buildNewConfig(context);
+            PAGConfig pAGInitConfig = buildNewConfig(appid, context);
 
             PAGConfig.setGDPRConsent(1);
             PAGConfig.setChildDirected(1);
@@ -132,6 +137,16 @@ public class pangleads extends CordovaPlugin {
         {
             String slotId = args.getString( 0 );
             Number load_timeout = args.getInt( 1 );
+
+            if(slotId.isEmpty()) {
+                 callbackContext.error("pangle showAppOpen fail: slotId not defined");
+                  return true;
+            }
+
+            if(load_timeout == null) {
+                 callbackContext.error("pangle showAppOpen fail: load_timeout not defined");
+                  return true;
+            }
 
             PAGAppOpenRequest request = new PAGAppOpenRequest();
             request.setTimeout(load_timeout != null ? (int) load_timeout : 3000);
@@ -296,13 +311,12 @@ public class pangleads extends CordovaPlugin {
                             bannerAd.destroy();
                             //bannerAd.setVisibility(View.GONE);
 
-                           // ((ViewGroup) bannerAd.getParent()).removeView(bannerAd);
+                            //((ViewGroup) bannerAd.getParent()).removeView(bannerAd);
                             bannerAd = null;
-
 
                             _isBannerShowing = false;
 
-                            PluginResult result = new PluginResult(PluginResult.Status.OK, "AdDistroyed");   //Facebook Banner AdDistroyed
+                            PluginResult result = new PluginResult(PluginResult.Status.OK, "AdDistroyed");   
                             result.setKeepCallback(true);
                             callbackContext.sendPluginResult(result);
 
@@ -310,9 +324,6 @@ public class pangleads extends CordovaPlugin {
                             callbackContext.error(err.toString());
                         }
                     }
-
-                    //callbackContext.success("Facebook banner Ads hide");
-
                     //PluginResult result = new PluginResult(PluginResult.Status.OK, "");
                     //callbackContext.sendPluginResult(result);
                 }
