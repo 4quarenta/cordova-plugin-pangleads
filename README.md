@@ -16,7 +16,9 @@ cordova plugin add https://github.com/4quarenta/cordova-plugin-pangleads.git
 
 To avoid it, right after adding the plugin:
 
-in `platforms\android\app\src\main\java\cordova\plugin\pangleads\pangleads\pangleads.java`
+<blockquote>
+in platforms\android\app\src\main\java\cordova\plugin\pangleads\pangleads\pangleads.java
+</blockquote>
 
 On line 33, replace
 
@@ -28,7 +30,16 @@ for your package
 ```java
 import com.yourpackage.app.R;
 ```
-now just be happy!
+
+You can also do this substitution above inside
+
+<blockquote>
+ \src-cordova\plugins\cordova.plugin.pangleads\src\android\pangleads.java
+</blockquote>
+
+but this way you should run `cordova prepare` after.
+
+done, just be happy! :)
 
 
 ## Pangle SDK version
