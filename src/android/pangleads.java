@@ -294,9 +294,9 @@ public class pangleads extends CordovaPlugin {
                         try {
 
                             bannerAd.destroy();
-                            bannerAd.setVisibility(View.GONE);
+                            //bannerAd.setVisibility(View.GONE);
 
-                            ((ViewGroup) bannerAd.getParent()).removeView(bannerAd);
+                           // ((ViewGroup) bannerAd.getParent()).removeView(bannerAd);
                             bannerAd = null;
 
 
