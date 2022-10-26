@@ -41,6 +41,11 @@ but this way you should run `cordova prepare` after.
 
 done, just be happy! :)
 
+## Uninstallation
+```sh
+cordova plugin rm cordova.plugin.pangleads
+```
+
 
 ## Pangle SDK version
 I will try to keep the latest version, current version is 'com.pangle.global:ads-sdk:4.6.0.4'
